@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putdigit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 15:15:43 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/05 15:16:55 by ahadama-         ###   ########.fr       */
+/*   Created: 2023/11/17 18:12:41 by ahadama-          #+#    #+#             */
+/*   Updated: 2023/11/17 18:46:51 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../ft_print.h"
 
-void	ft_putstr_fd(char *s, int fd)
+static	int	convert_hex(unsigned long long n, char *symbols)
 {
-	int	i;
+	char    *nbr[16];
+	int	count;
 
-	if (s != NULL)
-	{
-		i = 0;
-		while (s[i])
-		{
-			ft_putchar_fd(s[i], fd);
-			i++;
-		}
-	}
+	count = 0;
+	if (n == 0)
+		return (ft_putchar('0'));
+	
+
+}
+int	ft_puthex(unsigned long n, int base)
+{
+	char	*symbols_lo;
+	char	*symbols_up;
+	int	result;
+
+	symbols_lo = "0123456789abcdef";
+	symbols_up = "0123456789ABCDEF";
+	
 }

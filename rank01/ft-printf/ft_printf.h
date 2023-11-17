@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:20:18 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/13 18:41:46 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/11/17 12:19:21 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 # include <stdarg.h>
 # include "lbft/libft.h"
 
-
+int	ft_printf(const char	*str, ...);
 
 # endif

@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_put_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 15:31:46 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/10/20 10:59:11 by ahadama-         ###   ########.fr       */
+/*   Created: 2023/11/17 15:44:24 by ahadama-          #+#    #+#             */
+/*   Updated: 2023/11/17 15:45:49 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../ft_printf.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_put_u(unsigned int n)
 {
-	size_t		i;
+	unsigned int	count;
 
-	if (!dest && !src)
-		return (0);
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dest);
+	count = 0;
+	if (n >= 10)
+		count += ft_put_u(n / 10);
+	count += ft_putchar((nbr % 10) + 48);
+	return (count);
 }
