@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_u.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 15:44:24 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/17 15:45:49 by ahadama-         ###   ########.fr       */
+/*   Created: 2023/10/20 14:05:07 by ahadama-          #+#    #+#             */
+/*   Updated: 2023/11/05 12:46:45 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
-int	ft_put_u(unsigned int n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	count;
+	int	i;
 
-	count = 0;
-	if (n >= 10)
-		count += ft_put_u(n / 10);
-	count += ft_putchar((nbr % 10) + 48);
-	return (count);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i++;
+	}
+	if (s[i] == (char)c)
+		return ((char *)(s + i));
+	return (NULL);
 }
