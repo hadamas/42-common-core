@@ -6,13 +6,13 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:44:24 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/22 18:24:05 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:29:38 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_u(unsigned int n)
+int	ft_putunsigned(unsigned int n)
 {
 	unsigned int	count;
 

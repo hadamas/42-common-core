@@ -6,7 +6,7 @@
 #    By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/11 14:37:50 by ahadama-          #+#    #+#              #
-#    Updated: 2023/11/22 18:07:34 by ahadama-         ###   ########.fr        #
+#    Updated: 2023/11/23 16:42:54 by ahadama-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,21 +16,24 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-RM = rm -f
-
 SRCS = ft_printf.c \
+       ft_format.c \
        ft_putchar.c \
        ft_putstr.c \
        ft_putnbr.c \
        ft_putunsigned.c \
-       ft_puthex.c
+       ft_puthex.c \
+       ft_strchr.c \
+       ft_strlen.c
 
-OBJS = $(SRCS:.c = .o)
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
+
+RM = rm -f
 
 clean:
 	$(RM) $(OBJS)

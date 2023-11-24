@@ -6,11 +6,11 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 13:22:43 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/17 13:25:03 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/11/23 20:03:06 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(int c)
 {

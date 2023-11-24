@@ -18,6 +18,7 @@ int	ft_putnbr(int n)
 	int	flag;
 
 	count = 0;
+	flag = 0;
 	if (n == -2147483648)
 	{
 		count += ft_putstr("-2147483648");

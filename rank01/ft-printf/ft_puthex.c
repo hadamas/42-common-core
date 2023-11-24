@@ -6,44 +6,47 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:12:41 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/22 17:59:48 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:05:09 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "../ft_print.h"
+#include <stdio.h>
+#include "ft_printf.h"
 
 static	int	ft_convert(unsigned long long n, char *symbols)
 {
-	char    nbr[16];
-	int	count;
+	char	nbr[16];
+	int		count;
+	int		i;
 
 	count = 0;
+	i = 0;
 	if (n == 0)
 		return (ft_putchar('0'));
-	while(n > 0)
+	while (n > 0)
 	{
-		*nbr++ = symbols[n % 16];
+		nbr[i] = symbols[n % 16];
 		n /= 16;
-		count++;
+		i++;
 	}
-	*nbr = '\0';
-	while (count--)
-		ft_putchar(n);
+	count = i;
+	nbr[i] = '\0';
+	while (i--)
+		ft_putchar(nbr[i]);
 	return (count);
 }
-int	ft_puthex(unsigned long n, int base)
+
+int	ft_puthex(unsigned long long n, int c)
 {
 	char	*symbols_lo;
 	char	*symbols_up;
-	int	result;
+	int		result;
 
 	symbols_lo = "0123456789abcdef";
 	symbols_up = "0123456789ABCDEF";
 	result = 0;
-
-	if (n == 'x')
+	if (c == 'x')
 		result = ft_convert(n, symbols_lo);
-	else if (n == 'X')
+	else if (c == 'X')
 		result = ft_convert(n, symbols_up);
 	else
 	{
