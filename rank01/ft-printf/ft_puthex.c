@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:12:41 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/24 17:05:09 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:35:45 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -28,8 +28,8 @@ static	int	ft_convert(unsigned long long n, char *symbols)
 		n /= 16;
 		i++;
 	}
-	count = i;
 	nbr[i] = '\0';
+	count = i;
 	while (i--)
 		ft_putchar(nbr[i]);
 	return (count);

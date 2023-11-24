@@ -20,7 +20,7 @@ int	ft_printf(const char *format, ...)
 
 	count = 0;
 	va_start(ap, format);
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%' && ft_strchr("cspdiuxX%", format[i + 1]))
 		{
