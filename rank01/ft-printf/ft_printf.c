@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 14:14:16 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/24 17:00:09 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/11/25 12:17:18 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_printf(const char *format, ...)
 	int		count;
 	int		i;
 
+	i = 0;
 	count = 0;
 	va_start(ap, format);
 	while (format[i] != '\0')
