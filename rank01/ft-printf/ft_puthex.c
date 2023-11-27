@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:12:41 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/11/25 13:07:58 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:57:09 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,10 @@ int	ft_puthex(unsigned long long n, int c)
 		result = ft_convert(n, symbols_up);
 	else
 	{
+		if (n == 0 && (c == 'x' || c == 'X'))
+			return (0);
 		if (n == 0)
-		{
-			if (c == 'x' || c == 'X')
-				return (0);
 			result = ft_putstr("(nil)");
-		}
 		else
 		{
 			result = ft_putstr("0x");
