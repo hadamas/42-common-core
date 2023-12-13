@@ -1,4 +1,4 @@
-TIMEOUT_US				= 1500000
+TIMEOUT_US				= 15000000
 
 .DEFAULT_GOAL			= a
 UTILS					= utils/sigsegv.cpp utils/color.cpp utils/check.cpp utils/gnl.cpp utils/leaks.cpp

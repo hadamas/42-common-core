@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 13:47:20 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/12/13 12:00:22 by ahadama-         ###   ########.fr       */
+/*   Created: 2023/12/13 14:01:01 by ahadama-          #+#    #+#             */
+/*   Updated: 2023/12/13 14:06:26 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
 #include "get_next_line.h"
+/*#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>*/
 
 void	polish_list(t_list **list)
 {
 	t_list	*last_node;
 	t_list	*clean_node;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*buffer;
 
 	buffer = malloc(BUFFER_SIZE + 1);
@@ -25,7 +27,6 @@ void	polish_list(t_list **list)
 	if (buffer == NULL || clean_node == NULL)
 		return ;
 	last_node = find_last_node(*list);
-	
 	i = 0;
 	j = 0;
 	while (last_node->str_buffer[i] && last_node->str_buffer[i] != '\n')
@@ -40,8 +41,8 @@ void	polish_list(t_list **list)
 
 char	*get_line(t_list *list)
 {
-	int	str_len;
 	char	*next_str;
+	int		str_len;
 
 	if (list == NULL)
 		return (NULL);
@@ -72,8 +73,8 @@ void	append(t_list **list, char *buffer)
 
 void	create_list(t_list **list, int fd)
 {
-	int	char_read;
 	char	*buffer;
+	int		char_read;
 
 	while (!found_newline(*list))
 	{
@@ -93,8 +94,8 @@ void	create_list(t_list **list, int fd)
 
 char	*get_next_line(int fd)
 {
-	static	t_list	*list = NULL;
-	char		*next_line;
+	static t_list	*list = NULL;
+	char			*next_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0) < 0)
 		return (NULL);
@@ -102,7 +103,7 @@ char	*get_next_line(int fd)
 	if (list == NULL)
 		return (NULL);
 	next_line = get_line(list);
- 	polish_list(&list);
+	polish_list(&list);
 	return (next_line);
 }
 /*int	main(void)
@@ -116,5 +117,4 @@ char	*get_next_line(int fd)
 
 	while ((line = get_next_line(fd)))
 		printf("%d->%s\n", lines++, line);
-	return (0);
 }*/

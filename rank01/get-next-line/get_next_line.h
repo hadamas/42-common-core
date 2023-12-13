@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:50:54 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/12/13 11:17:20 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/12/13 13:50:31 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
+#  define BUFFER_SIZE 10
 # endif
 
 # include <stdlib.h>

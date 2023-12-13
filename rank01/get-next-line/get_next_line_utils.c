@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 15:49:13 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/12/13 12:03:16 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/12/13 13:48:35 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_list	*find_last_node(t_list *list)
 		return (NULL);
 	while (list->next)
 		list = list->next;
-	return(list);
+	return (list);
 }
 
 void	copy_str(t_list *list, char *str)
@@ -90,7 +90,7 @@ int	len_to_newline(t_list *list)
 		}
 		list = list->next;
 	}
-	return (len); 
+	return (len);
 }
 
 void	dealloc(t_list **list, t_list *clean_node, char *buffer)
