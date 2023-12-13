@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 15:49:13 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/12/06 18:39:35 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/12/13 12:03:16 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	found_newline(t_list *list)
 		while (list->str_buffer[i] && i < BUFFER_SIZE)
 		{
 			if (list->str_buffer[i] == '\n')
-				return (-1);
+				return (1);
 			i++;
 		}
 		list = list->next;
@@ -75,7 +75,6 @@ int	len_to_newline(t_list *list)
 	if (list == NULL)
 		return (0);
 	len = 0;
-
 	while (list)
 	{
 		i = 0;

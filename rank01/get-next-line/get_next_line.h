@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:50:54 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/12/06 18:29:48 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/12/13 11:17:20 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 # define BUFFER_SIZE 10
 # endif
 
-# include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
@@ -35,7 +33,8 @@ void	copy_str(t_list *list, char *str);
 int		len_to_newline(t_list *list);
 void	polish_list(t_list **list);
 char	*get_next_line(int fd);
-void	dealloc(t_list **list, t_list *clean_node, char *buf);
+void	dealloc(t_list **list, t_list *clean_node, char *buffer);
 void	create_list(t_list **list, int fd);
+void	append(t_list **list, char *buffer);
 
 #endif

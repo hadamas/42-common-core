@@ -6,7 +6,7 @@
 /*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 13:47:20 by ahadama-          #+#    #+#             */
-/*   Updated: 2023/12/06 18:41:47 by ahadama-         ###   ########.fr       */
+/*   Updated: 2023/12/13 12:00:22 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
  
@@ -28,11 +28,9 @@ void	polish_list(t_list **list)
 	
 	i = 0;
 	j = 0;
-	while (last_node->str_buffer[i] != '\0'
-		&& last_node->str_buffer[i] != '\n')
+	while (last_node->str_buffer[i] && last_node->str_buffer[i] != '\n')
 		++i;
-	while (last_node->str_buffer[i]
-		&& last_node->str_buffer[++i])
+	while (last_node->str_buffer[i] && last_node->str_buffer[++i])
 		buffer[j++] = last_node->str_buffer[i];
 	buffer[j] = '\0';
 	clean_node->str_buffer = buffer;
@@ -99,8 +97,6 @@ char	*get_next_line(int fd)
 	char		*next_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &next_line, 0) < 0)
-		return (NULL);
-	if (list == NULL)
 		return (NULL);
 	create_list(&list, fd);
 	if (list == NULL)
