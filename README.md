@@ -8,7 +8,7 @@ Projects Developed **<a href="https://42.rio/" style="color:white;">42 RIO</a>**
 
 **<a href="https://profile.intra.42.fr/users/ahadama-" style="color:white;">Intra Profile</a>**
 
-![42RIO](banner.png)
+![42RIO](readme/banner.png)
 
 ## About
 
