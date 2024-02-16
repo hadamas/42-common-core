@@ -1,8 +1,9 @@
- <center>
+<div align="center">
  
- # 42cursus 💻
 
-Projects Developed **<a href="https://42.rio/" style="color:white;">42 RIO</a>** programming school
+# 42cursus 💻
+
+Projects Developed **<a href="https://42.rio/" style="color:white">42 RIO</a>** programming school
 
 **begin date : 16/oct/2023 🎉**
 
@@ -20,7 +21,8 @@ free for whoever is approved in its selection process* - the so-called "Piscine"
 thus "cadets" (42's students).
 ```
 
-</center>
+</div>
+
 For further information about 42's selection process (the "Piscine"), please visit the <a href="https://42.rio/#comoparticipar" style="color:white;font-weight:bold;">C Piscine</a>.
 
 ## PROJECT LISTS
