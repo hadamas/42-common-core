@@ -6,7 +6,7 @@
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:44:03 by ahadama-          #+#    #+#             */
-/*   Updated: 2024/02/29 13:44:07 by ahadama-         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:12:47 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,27 @@ static char *ft_nextword(char *str, char separator)
 
 char **ft_split(char *arr, char separator)
 {
-    
+	int	n_words;
+	char  **str_vector;
+	int	i;
+
+	i = 0;
+	n_words = count_words(*arr, separator);
+	str_vector = malloc(sizeof(char *) * (n_words + 2));
+	if (!str_vector)
+		return (NULL);
+	while (n_words-- >= 0)
+	{
+		if (i == 0)
+		{
+			str_vector[i] = malloc(sizeof(char));
+			if (!str_vector[i])
+				return (NULL);
+			str_vector[i++][0] = '\0';
+			continue;
+		}
+		str_vector[i++] = ft_nextword(str, separator);
+	}
+	str_vector[i] = '\0';
+	return (str_vector);
 }
