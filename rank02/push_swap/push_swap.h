@@ -18,7 +18,7 @@
 # include <stdbool.h>
 # include <unistd.h>
 
-typedef struct s_stack
+typedef struct s_stack_node
 {
 	int	value;
 	int	c_position;
@@ -29,7 +29,7 @@ typedef struct s_stack
 	struct s_stack	*target;
 	struct s_tack	*next;
 	struct s_stack	*prev;
-}	t_stack
+}	t_stack_node
 
 //handle input
 

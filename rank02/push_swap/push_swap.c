@@ -14,17 +14,25 @@
 
 int	main(int ac, char *av[])
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack_node *a; //store a pointer to stack a
+	t_stack_node *b;
  
-	a = NULL;
+	a = NULL; //set to avoid undefined behavior
 	b = NULL;
-	if (ac != 1 || ac == 2 && !av[1][0])
+	if (ac == 1 || (ac == 2 && !av[1][0])) //checks if the input is incorrect
 		return (1);
-	else if (ac == 2)
-		av = split(av[1], ' ');
-	stack_init(&a, av + 1, ac == 2);
-	if (!stack_sorted(a))
+	else if (ac == 2) //also checks the input
+		av = split(av[1], ' '); //call the split and extract each substring
+	init_stack_a(&a, av + 1, ac == 2); //initiate stack a and also handle errors
+	if (!stack_sorted(a)) //checks if the stack is sorted
 	{
+		if (stack_len(a) == 2) //if not and there's just 2 nums, swap the them
+			sa(&a);
+		else if (stack_len(a) == 3) //if not and there's 3 , call the sort three algorithm
+			sort_three(&a);
+		else //if not and there's more then 3 call sort stacks()
+			sort_stacks(&a, &b); 
 	}
+	free_stack(&a);
+	return (0);
 }

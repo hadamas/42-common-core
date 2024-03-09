@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -59,29 +59,31 @@ static char *ft_nextword(char *str, char separator)
     return (nextword);
 }
 
-char **ft_split(char *arr, char separator)
+char **split(char *array, char separator)
 {
-	int	n_words;
-	char  **str_vector;
-	int	i;
+	int	words_count; //number of substrings counted
+	char  **result_array; //to store a pointer to pointers, the array with all substrings
+	int	i; //to iterate through the array
 
 	i = 0;
-	n_words = count_words(*arr, separator);
-	str_vector = malloc(sizeof(char *) * (n_words + 2));
-	if (!str_vector)
+	words_count = count_words(array, separator);
+    if (!words_count)
+        exit(1);
+	result_array = malloc(sizeof(char *) * (size_t)(words_count + 2)); //allocate memory for the result_array based on 'words_count' + 2 additional slots for the '\0' at the end of the last string and the '\0' of the entire array
+	if (!result_array)
 		return (NULL);
-	while (n_words-- >= 0)
+	while (words_count-- >= 0) //iterates through the words to be splited
 	{
-		if (i == 0)
+		if (i == 0) //check if the first carc
 		{
-			str_vector[i] = malloc(sizeof(char));
-			if (!str_vector[i])
+			result_array[i] = malloc(sizeof(char));
+			if (!result_array[i])
 				return (NULL);
-			str_vector[i++][0] = '\0';
+			result_array[i++][0] = '\0';
 			continue;
 		}
-		str_vector[i++] = ft_nextword(str, separator);
+		result_array[i++] = ft_nextword(array, separator);
 	}
-	str_vector[i] = '\0';
-	return (str_vector);
+	result_array[i] = '\0';
+	return (result_array);
 }
