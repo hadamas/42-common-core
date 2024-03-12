@@ -13,36 +13,44 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
-# include <unistd.h>
+# include "../libft/inc/libft.h"
+# include "../libft/inc/ft_print.h"
+
 
 typedef struct s_stack_node
 {
-	int	value;
-	int	c_position;
-	int	final_index;
-	int	push;
-	bool	up_middle;
+	int	nbr;
+	int	index;
+	int	push_cost;
+	bool	above_median;
 	bool	cheapest;
+
 	struct s_stack	*target;
 	struct s_tack	*next;
 	struct s_stack	*prev;
-}	t_stack_node
+}	t_stack_node;
 
 //handle input
 
 
 Handle Errors
 
-Stack Creation
 
-Linked List Utils
+//Stack Initiation
 
-Algorithms
 
-Commands
+//Nodes Initiation
+
+
+//Stack Utils
+
+
+//Commands
+
+
+//Algorithms
 
 
 

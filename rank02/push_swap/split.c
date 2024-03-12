@@ -27,8 +27,8 @@ static int count_words(char *str, char separator)
         {
             if (!inside_word)
             {
-                inside_word = true;
                 count++;
+                inside_word = true;
             }
             str++;
         }
@@ -36,27 +36,27 @@ static int count_words(char *str, char separator)
     return (count);
 }
 
-static char *ft_nextword(char *str, char separator)
+static char *ft_next_word(char *str, char separator)
 {
-    int i;
+    static int i;
     int j;
     int len;
-    char *nextword;
+    char *next_word;
     
     i = 0;
     j = 0;
     len = 0;
     while (str[i] == separator && *str)
         i++;
-    while (str[i + len] != separator && str[i + len])
+    while ((str[i + len] != separator) && str[i + len])
         len++;
-    nextword = malloc(sizeof(char) * (size_t)len + 1);
-    if (!nextword)
+    next_word = malloc(sizeof(char) * (size_t)len + 1);
+    if (!next_word)
         return (NULL);
     while (str[i] != separator && str[i])
-        nextword[j++] = str[i++];
-    nextword[j] = "\0";
-    return (nextword);
+        next_word[j++] = str[i++];
+    next_word[j] = "\0";
+    return (next_word);
 }
 
 char **split(char *array, char separator)
@@ -74,7 +74,7 @@ char **split(char *array, char separator)
 		return (NULL);
 	while (words_count-- >= 0) //iterates through the words to be splited
 	{
-		if (i == 0) //check if the first carc
+		if (i == 0) //check if the first character of the input string iis the delimiter     
 		{
 			result_array[i] = malloc(sizeof(char));
 			if (!result_array[i])
@@ -82,7 +82,7 @@ char **split(char *array, char separator)
 			result_array[i++][0] = '\0';
 			continue;
 		}
-		result_array[i++] = ft_nextword(array, separator);
+		result_array[i++] = ft_next_word(array, separator);
 	}
 	result_array[i] = '\0';
 	return (result_array);
