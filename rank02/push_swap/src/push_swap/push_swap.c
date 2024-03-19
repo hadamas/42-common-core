@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
 int	main(int ac, char *av[])
 {
-	t_stack_node *a; //store a pointer to stack a
+	t_stack_node *a; 
 	t_stack_node *b;
  
-	a = NULL; //set to avoid undefined behavior
+	a = NULL; 
 	b = NULL;
-	if (ac == 1 || (ac == 2 && !av[1][0])) //checks if the input is incorrect
+	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
-	else if (ac == 2) //also checks the input
-		av = split(av[1], ' '); //call the split and extract each substring
-	init_stack_a(&a, av + 1, ac == 2); //initiate stack a and also handle errors
-	if (!stack_sorted(a)) //checks if the stack is sorted
+	else if (ac == 2)
+		av = split(av[1], ' ');
+	init_stack_a(&a, av + 1);
+	if (!stack_sorted(a))
 	{
-		if (stack_len(a) == 2) //if not and there's just 2 nums, swap the them
-			sa(&a);
-		else if (stack_len(a) == 3) //if not and there's 3 , call the sort three algorithm
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
 			sort_three(&a);
-		else //if not and there's more then 3 call sort stacks()
+		else
 			sort_stacks(&a, &b); 
 	}
 	free_stack(&a);

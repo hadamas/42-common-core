@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
 
 static long ft_atol(const char *str)
@@ -41,7 +41,7 @@ static void append_node(t_stack_node **stack, int n)
     }
     else
     {
-        last_node = find_last_node(*stack);
+        last_node = find_last(*stack);
         last_node->next = node;
         node->prev = last_node;
     }
@@ -62,5 +62,39 @@ void    init_stack_a(t_stack_node **a, char **av)
             free_errors(a);
         append_node(a, (int)n);
         i++;
+    }
+}
+
+t_stack_node *get_cheapest(t_stack_node *stack)
+{
+    if (!stack)
+        return (NULL);
+    while(stack)
+    {
+        if (stack->cheapest)
+            return (stack);
+        stack = stack->next;
+    }
+    return (NULL);
+}
+
+void    prep_for_push(t_stack_node  **stack, t_stack_node   *top_node, char stack_name)
+{
+    while (*stack != top_node)
+    {
+        if (stack_name == 'a')
+        {
+            if (top_node->above_median)
+                ra(stack, false);
+            else
+                rra(stack, false);
+        }
+        else if (stack_name == 'b')
+        {
+            if (top_node->above_median)
+                rb(stack, false);
+            else
+                rrb(stack, false);
+        }
     }
 }

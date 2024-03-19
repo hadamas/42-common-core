@@ -6,11 +6,11 @@
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:44:03 by ahadama-          #+#    #+#             */
-/*   Updated: 2024/03/01 15:12:47 by ahadama-         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:06:45 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../inc/push_swap.h"
 
 static int count_words(char *str, char separator)
 {
@@ -55,26 +55,28 @@ static char *ft_next_word(char *str, char separator)
         return (NULL);
     while (str[i] != separator && str[i])
         next_word[j++] = str[i++];
-    next_word[j] = "\0";
+    next_word[j] = '\0';
     return (next_word);
 }
 
 char **split(char *array, char separator)
 {
 	int	words_count; //number of substrings counted
-	char  **result_array; //to store a pointer to pointers, the array with all substrings
+	char  **result_array;
 	int	i; //to iterate through the array
 
 	i = 0;
 	words_count = count_words(array, separator);
     if (!words_count)
+    {
         exit(1);
+    }
 	result_array = malloc(sizeof(char *) * (size_t)(words_count + 2)); //allocate memory for the result_array based on 'words_count' + 2 additional slots for the '\0' at the end of the last string and the '\0' of the entire array
 	if (!result_array)
 		return (NULL);
 	while (words_count-- >= 0) //iterates through the words to be splited
 	{
-		if (i == 0) //check if the first character of the input string iis the delimiter     
+		if (i == 0)     
 		{
 			result_array[i] = malloc(sizeof(char));
 			if (!result_array[i])
