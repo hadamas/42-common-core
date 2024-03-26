@@ -1,52 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:28:30 by ahadama-          #+#    #+#             */
-/*   Updated: 2024/02/22 14:32:01 by ahadama-         ###   ########.fr       */
+/*   Updated: 2024/03/26 17:43:14 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-int stack_len(t_stack_node *stack)
+int	stack_len(t_stack_node *stack)
 {
-    int count;
+	int	count;
 
-    if (!stack)
-        return (0);
-    count = 0;
-    while (stack)
-    {
-        stack = stack->next;
-        count++;
-    }
-    return (count);
+	if (!stack)
+		return (0);
+	count = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		count++;
+	}
+	return (count);
 }
 
-t_stack_node    *find_last(t_stack_node *stack)
+t_stack_node	*find_last(t_stack_node *stack)
 {
-    if (!stack)
-        return (NULL);
-    while (stack->next)
-        stack = stack->next;
-    return (stack);
+	if (!stack)
+		return (NULL);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
-bool    stack_sorted(t_stack_node *stack)
+bool	stack_sorted(t_stack_node *stack)
 {
-    if (!stack)
-        return (1);
-    while (stack->next)
-    {
-        if (stack->nbr > stack->next->nbr)
-            return (false);
-        stack = stack->next;
-    }
-    return (true);
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->nbr > stack->next->nbr)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
 }
 
 t_stack_node	*find_min(t_stack_node *stack)
@@ -61,12 +61,12 @@ t_stack_node	*find_min(t_stack_node *stack)
 	{
 		if (stack->nbr < min)
 		{
-			min = stack->nbr; 
+			min = stack->nbr;
 			min_node = stack;
 		}
 		stack = stack->next;
 	}
-	return (min_node); 
+	return (min_node);
 }
 
 t_stack_node	*find_max(t_stack_node *stack)
@@ -77,7 +77,7 @@ t_stack_node	*find_max(t_stack_node *stack)
 	if (!stack)
 		return (NULL);
 	max = LONG_MIN;
-	while (stack) 
+	while (stack)
 	{
 		if (stack->nbr > max)
 		{

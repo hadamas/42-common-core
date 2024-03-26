@@ -6,7 +6,7 @@
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:16:45 by ahadama-          #+#    #+#             */
-/*   Updated: 2024/02/29 14:33:40 by ahadama-         ###   ########.fr       */
+/*   Updated: 2024/03/26 18:57:20 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "../libft/libft/libft.h"
 
-#ifndef true
-#define true 1
+#ifndef	true
+#define	true 1
 #endif
 
 #ifndef false

@@ -6,7 +6,7 @@
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:44:16 by ahadama-          #+#    #+#             */
-/*   Updated: 2024/03/01 15:16:19 by ahadama-         ###   ########.fr       */
+/*   Updated: 2024/03/26 17:37:59 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	main(int ac, char *av[])
 {
-	t_stack_node *a; 
-	t_stack_node *b;
- 
-	a = NULL; 
+	t_stack_node	*a;
+	t_stack_node	*b;
+
+	a = NULL;
 	b = NULL;
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
@@ -31,7 +31,7 @@ int	main(int ac, char *av[])
 		else if (stack_len(a) == 3)
 			sort_three(&a);
 		else
-			sort_stacks(&a, &b); 
+			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
 	return (0);

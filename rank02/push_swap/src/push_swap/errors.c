@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/24 17:13:53 by ahadama-          #+#    #+#             */
+/*   Updated: 2024/03/26 17:39:54 by ahadama-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
 int	error_syntax(char *str_n)
 {
-	if (!(*str_n == '+'|| *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
+	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
 		return (1);
-	if ((*str_n == '+'|| *str_n == '-') && !(str_n[1] >= '0' && str_n[1] <= '9'))
+	if ((*str_n == '+' || *str_n == '-')
+		&& !(str_n[1] >= '0' && str_n[1] <= '9'))
 		return (1);
 	while (*++str_n)
 	{
@@ -24,7 +36,7 @@ int	error_duplicate(t_stack_node *a, int n)
 		if (a->nbr == n)
 			return (1);
 		a = a->next;
-    }
+	}
 	return (0);
 }
 
@@ -39,7 +51,7 @@ void	free_stack(t_stack_node **stack)
 	while (current)
 	{
 		tmp = current->next;
-		current->nbr = 0; 
+		current->nbr = 0;
 		free(current);
 		current = tmp;
 	}

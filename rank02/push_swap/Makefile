@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/03/26 17:17:51 by ahadama-          #+#    #+#              #
+#    Updated: 2024/03/26 17:18:20 by ahadama-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = push_swap
 LIBFT = ./libft/libft/libft.a
@@ -17,7 +28,7 @@ SRCS = ./src/push_swap/errors.c \
 
 OBJS = $(SRCS: .c=.o) 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 RM = rm -rf
 
 all: $(NAME)

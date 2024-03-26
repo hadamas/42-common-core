@@ -1,9 +1,20 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahadama- <ahadama-@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/24 17:13:53 by ahadama-          #+#    #+#             */
+/*   Updated: 2024/03/26 16:43:21 by ahadama-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "../../inc/push_swap.h"
 
 static void	push(t_stack_node **dst, t_stack_node **src)
 {
 	t_stack_node	*push_node;
+
 	if (!*src)
 		return ;
 	push_node = *src;
@@ -26,8 +37,8 @@ static void	push(t_stack_node **dst, t_stack_node **src)
 
 void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
-	push(a, b); 
-	if (!print) 
+	push(a, b);
+	if (!print)
 		write(1, "pa\n", 3);
 }
 
