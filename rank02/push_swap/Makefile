@@ -28,14 +28,14 @@ SRCS = ./src/push_swap/errors.c \
 
 OBJS = $(SRCS:.c=.o) 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS) 
 		@make -s -C ./libft/libft/
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)		
+		$(CC) $(CFLAGS) $(SRCS) $(LIBFT) -o $(NAME)		
 
 clean:
 		@make -s -C ./libft/libft/ clean
