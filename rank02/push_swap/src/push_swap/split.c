@@ -21,7 +21,7 @@ static int	count_words(char *str, char separator)
 	while (*str)
 	{
 		inside_word = false;
-		while (*str == separator && *str)
+		while (*str == separator)
 			str++;
 		while (*str != separator && *str)
 		{
@@ -30,7 +30,7 @@ static int	count_words(char *str, char separator)
 				count++;
 				inside_word = true;
 			}
-			str++;
+			++str;
 		}
 	}
 	return (count);
@@ -46,7 +46,7 @@ static char	*ft_next_word(char *str, char separator)
 	i = 0;
 	j = 0;
 	len = 0;
-	while (str[i] == separator && *str)
+	while (str[i] == separator)
 		i++;
 	while ((str[i + len] != separator) && str[i + len])
 		len++;
@@ -68,9 +68,7 @@ char	**split(char *array, char separator)
 	i = 0;
 	words_count = count_words(array, separator);
 	if (!words_count)
-	{
 		exit(1);
-	}
 	result_array = malloc(sizeof(char *) * (size_t)(words_count + 2));
 	if (!result_array)
 		return (NULL);
@@ -86,6 +84,6 @@ char	**split(char *array, char separator)
 		}
 		result_array[i++] = ft_next_word(array, separator);
 	}
-	result_array[i] = '\0';
+	result_array[i] = NULL;
 	return (result_array);
 }
