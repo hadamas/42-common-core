@@ -24,4 +24,7 @@ int main(int ac, char *av[])
     }
     check_file(av[1]);
     start_map(&game, av[1]);
+    start_window(&game);
+    draw_map(&game);
+    
 }

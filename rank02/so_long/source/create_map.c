@@ -60,7 +60,7 @@ void    get_map_rows(t_game *game, char *file)
 char   **create_map(file)
 {
     int         fd;
-    char    *liine;
+    char    *line;
     char    *
 }
 

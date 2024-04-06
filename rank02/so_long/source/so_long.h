@@ -15,7 +15,7 @@
 
 #include "../libraries/printf/ft_printf.h"
 #include "../libraries/libft/libft/libft.h"
-
+#include "../libraries/minilibx-linux/mlx.h"
 #include "../libraries/gnl/get_next_line.h"
 
 #include <stdlib.h>
