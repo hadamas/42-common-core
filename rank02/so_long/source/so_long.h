@@ -23,15 +23,34 @@
 # include <unistd.h>
 # include <fcntl.h>
 
+# define WALL "./images/wall"
+# define COIN "./images/coin.xpm"
+# define EXIT "./images/exit.xpm"
+# define PLAYERF "./images/player.xpm"
+//# define PLAYER_B "./images/.xpm"
+//# define PLAYER_L "./images/.xpm"
+//# define PLAYER_R "./images/.xpm"
+
 typedef struct s_map
 {
     char    **map;
     int         rows;
     int         columns;
-    int         coins;
+    int         coin;
     int         exit;
     int         player;
 }   t_map;
+
+typedef struct  s_img
+{
+    void    *img_wall;
+    void    *img_coin;
+    void    *img_exit;
+    void    *img_playerf;
+    //void    *img_playerb;
+    //void    *img_playerl;
+    //void    *img_playerr;
+}   t_img;
 
 typedef struct  s_pos
 {
@@ -41,13 +60,14 @@ typedef struct  s_pos
 
 typedef struct s_game
 {
-    void    *ptr_mlx;
-    void    *w_mlx;
+    void    *mlx;
+    void    *mlx_win;
     int         moves;
     t_map   map;
+    t_img   img;
     t_pos   pos;
+    t_pos   pos_e;
 }   t_game;
-
 
 void    check_file(char *file);
 

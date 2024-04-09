@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void    check_file(char *file)
+void    check_ber(char *file)
 {
     int fd;
     int i;
@@ -28,6 +28,20 @@ void    check_file(char *file)
     if (fd < 0)
     {
         ft_printf("Error: Map not found.\n");
+        exit(1);
+    }
+    close(fd);
+}
+
+void    check_file(char *file)
+{
+    int fd;
+
+    check_ber(file);
+    fd = open(file, O_RDONLY);
+    if (fd < 0)
+    {
+        ft_printf("Error: .ber file not found\n");
         exit(1);
     }
     close(fd);

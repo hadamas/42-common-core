@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_map.c                                       :+:      :+:    :+:   */
+/*   init_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -64,10 +64,11 @@ char   **create_map(file)
     char    *
 }
 
-void    start_map(t_game *game, char *file)
+void    init_map(t_game *game, char *file)
 {
     game->moves = 0;
     get_map_columns(game, file);
     get_map_rows(game, file);
     game->map.map = create_map(file);
+    
 }
