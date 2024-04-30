@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   check_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahadama- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/19 12:34:48 by ahadama-          #+#    #+#             */
-/*   Updated: 2024/04/19 12:35:20 by ahadama-         ###   ########.fr       */
+/*   Created: 2024/04/20 14:10:14 by ahadama-          #+#    #+#             */
+/*   Updated: 2024/04/20 14:10:17 by ahadama-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-int main(int ac, char *av[])
+int file_check(char *map_file)
 {
-    t_game  data;
+    int i;
 
-    if (ac != 2)
-    {
-        ft_printf("Error: Wrong input, please try: ./so_long file.ber\n");
-        exit(1);
-    }
-    read_map(data, av[1]);
-    
+    i = ft_strlen(map_file);
+    if (map_file[i - 1] != 'r' && map_file[i - 2] != 'e'
+            && map_file[i - 3] != 'b' && map_file[i - 4] != '.')
+        return (1);
+    return(0);
 }

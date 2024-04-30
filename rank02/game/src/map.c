@@ -12,56 +12,55 @@
 
 #include "../inc/so_long.h"
 
-int file_check(char *map_file)
+
+void    map_row(t_game *data, char *map_file)
 {
-    int i;
+    char    *temp;
+    int     rows;
+    int     fd;
 
-    i = ft_strlen(map_file);
-    if (map_file[i - 1] != 'r' && map_file[i - 2] != 'e'
-            && map_file[i - 3] != 'b' && map_file[i - 4] != '.')
-        return (1);
-    return(0);
-}
-
-static int  new_line(t_game *data, char *readmap)
-{
-    char    **temp;
-    int     i;
-
-    if (!readmap)
-        return (0);
-    i = 0;
-    data->row++;
-    temp = (char *)malloc(sizeof(char *) * (data->row + 1));
-    if (!temp)
-        return (0);
-    while (i < data->row - 1)
+    rows = 0;
+    fd = open(map_file, O_RDONLY);
+    while (1)
     {
-        temp[i] = data->map[i];
-        i++;
+        temp = get_next_line(fd);
+        if (!temp)
+        {
+            free(temp);
+            break ;
+        }
+        free(temp);
+        rows++;
     }
-    temp[i] = *readmap; //????????????
-    if (data->map)
-        free(data->map);
-    data->map = temp;
-    return (1);
+    data->row = rows;
+    close(fd);
 }
 
-static int  map_col(char *str)
+void  map_col(t_game *data, char *map_file)
 {
-    int cols;
+    char    *line;
+    int     col;
+    int     fd;
 
-    cols = 0;
-    while (str[cols] != '\0' && str[cols] != '\n')
-        cols++;
-    return (cols);
+    col = 0;
+    fd = open(map_file, O_RDONLY);
+    line = get_next_line(fd);
+    if (!line)
+    {
+        free(line);
+        ft_printf("Error: The map is empty.\n");
+        exit(1);
+    }
+    while (line[col] != '\n')
+        col++;
+    free(line);
+    close(fd);
+    data->col = col;
 }
 
 
 int read_map(t_game *data, char *map_file)
 {
-    char *readmap;
-
     if (file_check(map_file) == 1)
     {
         ft_printf("Error: File extension not supported.\n");
@@ -73,17 +72,12 @@ int read_map(t_game *data, char *map_file)
         ft_printf("Error: file not found.\n");
         exit(1);
     }
-    while (1)
-    {
-        readmap = get_next_line(data->fd);
-        if (!new_line(data, readmap))
-            break ;
-    }
-    if (!data->map)
+    map_row(data, map_file);
+    /*if (!data->map)
     {
         ft_printf("Error: Map not supported.\n");
         free_map(data);
-    }
+    }*/
     close(data->fd);
     data->col = map_col(data->map[0]);
     return (0);
