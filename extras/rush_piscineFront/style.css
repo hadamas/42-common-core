@@ -8,11 +8,7 @@ body {
     align-items: center;
     font-family: Helvetica, Sans-Serif;
     overflow: auto;
-    /*background-image: background-color: #ebe7db;
-    opacity: 0.8;
-    background: radial-gradient(circle, transparent 20%, #ebe7db 20%, #ebe7db 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #ebe7db 20%, #ebe7db 80%, transparent 80%, transparent) 57.5px 57.5px, linear-gradient(#dad7c5 4.6000000000000005px, transparent 4.6000000000000005px) 0 -2.3000000000000003px, linear-gradient(90deg, #dad7c5 4.6000000000000005px, #ebe7db 4.6000000000000005px) -2.3000000000000003px 0;
-    background-size: 115px 115px, 115px 115px, 57.5px 57.5px, 57.5px 57.5px;*/
-    background-image: url("./assets/background-space-cute.png");
+    margin: 0 auto;
 }
 
 
@@ -29,69 +25,246 @@ header {
     background-color: rgb(255, 255, 255);
 }
 
+/* ----------- NAV ----------------------*/
+
 nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 10px;
 }
 
-a {
-    margin: 0 7px;
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
+ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-#logo {
-    max-width: 30px;
-}
+/* ---------- SOCIAL MEDIA ---------------*/ 
 
-/* ---- NAV HADER ---- */
+  .example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+  }
 
-.nav-itens button {
-    border: 0;
-    background-color: white;
-    color: black;
-    font-family: Helvetica, Sans-Serif;
-    font-weight: 600;
-    font-size: 16px;
-}
-#dropdown-item {
-    cursor: pointer;
-}
+  .example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #4d4d4d;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  }
+  .example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+  }
+  .example-2 .icon-content a:hover {
+    color: white;
+  }
+  .example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover .filled {
+    height: 100%;
+  }
   
-#dropdown-item:hover, #dropdown-item:focus {
-    background-color: rgb(95, 173, 192);
-}
+  .example-2 .icon-content a[data-social="linkedin"] .filled {
+    background-color: #0274b3;
+  }
+  
+  .example-2 .icon-content a[data-social="github"] .filled{
+    background-color: #24262a;
+  }
+  .example-2 .icon-content a[data-social="instagram"] .filled {
+    background: linear-gradient(
+      45deg,
+      #405de6,
+      #5b51db,
+      #b33ab4,
+      #c135b4,
+      #e1306c,
+      #fd1f1f
+    );
+  }
+  .example-2 .icon-content a[data-social="youtube"] .filled{
+    background-color: #ff0000;
+  }
+  
 
-.dropdown-item {
+  /* ----------- LIGHT/ DARK MODE BUTTON ------------------*/
+
+  input {
+  }
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: rgb(255, 255, 255);
+    border: 1px solid #cccccc;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    right: 0.3em;
+    bottom: 0.3em;
+    transform: translateX(150%);
+    background-color: #363a3d;
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    
+  }
+  
+  .slider:after {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: #cccccc;
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  
+  .switch input:focus + .slider {
+    box-shadow: 0 0 2px #30312f;
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateY(0);
+  }
+  
+  .switch input:checked + .slider::after {
+    transform: translateX(-150%);
+  }
+  
+
+/* ---- SANDUWICH DE CLICAR ---------------------- ---- */
+
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .burger input {
+    display: none;
+  }
+  
+  .burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+  
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+  }
+
+/* -------- PARTE DOS DROPDOWN NO SANDUICHE ------------*/
+
+  .dropdown {
     position: relative;
     display: inline-block;
   }
   
-.dropdown-content {
+  .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-  
-  .dropdown-content a {
-    color: black;
     padding: 12px 16px;
-    text-decoration: none;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
     display: block;
-}
-  
-.dropdown-content a:hover {background-color: #f1f1f1}
-  
-.show {display:block;}
-
-
-
+  }
 
 /*   -------------------- MAIN --------------------------------------------*/
 
@@ -100,7 +273,7 @@ main {
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-top: 70px;
+    margin-top: 90px;
     padding: 0 15px;
     color:rgb(0, 0, 0);
 }
@@ -113,8 +286,6 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(95, 173, 192);
-    border-radius: 40px;
     width: 35%;
     padding: 15px;
 }
@@ -143,24 +314,22 @@ h1 {
 
 /* -------------- CARDS -----------------*/
 
-
 .cards {
-    background-color: aliceblue;
-    margin-top: 20px;
-    padding: 15px;
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    max-width: 80%;
+    gap: 30px;
+    padding: 15px;
 }
 
 .card {
-    height: 400px;
-    margin-top: 30px;
-    border: 2px black solid;
-    border-radius: 8%;
-    
-}
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    padding: 20px;
+    background: lightgrey;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+    }
+
 /* --------------------- FOOTER ---------------------------*/
 
 footer {

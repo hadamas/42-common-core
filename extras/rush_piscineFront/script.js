@@ -1,5 +1,15 @@
-document.getElementById("dropdown-item").onclick = function() {drop_options()};
+var isColorChanged = false;
 
-function drop_options() {
-  document.getElementById("id_dropdown-content").classList.toggle("show");
+document.getElementById("checkbox").onclick = function() {
+  changeColor();
+};
+
+function changeColor() {
+  if (!isColorChanged) {
+    document.body.style.backgroundColor = "#404040";
+    isColorChanged = true;
+  } else {
+    document.body.style.backgroundColor = ""; // Volta para a cor original (pode ser "#ffffff" ou qualquer outra cor que você definiu)
+    isColorChanged = false;
+  }
 }
