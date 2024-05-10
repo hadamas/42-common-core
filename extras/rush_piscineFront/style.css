@@ -22,7 +22,7 @@ header {
     top: 0;
     width: 100%;
     padding: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
 }
 
 /* ----------- NAV ----------------------*/
@@ -31,12 +31,80 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 10px;
 }
 
 ul {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
+} 
+
+.nav-itens button {
+  border: 0;
+  background-color:#ffffff;
+  color: black;
+  font-family: Helvetica, Sans-Serif;
+  font-weight: 600;
+  font-size: 16px;
 }
+
+a {
+  margin: 0 7px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+#underline{
+  position: relative;
+  display: inline-block;
+}
+
+#underline::after{
+  content: '';
+  position:absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 4px;
+  background-color: rgb(95, 173, 192);
+  transition: width o.3s ease;
+}
+
+#underline::after{
+  width: 0;
+}
+
+#underline:hover::after{
+  width: 100%;
+}
+
+.dropdown-item {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  margin: 0;
+}
+
+.dropdown-content a:hover {background-color: rgb(95,173,192)}
+
+.show {display:block;}
 
 /* ---------- SOCIAL MEDIA ---------------*/ 
 
@@ -142,6 +210,7 @@ ul {
     border-radius: 50px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+    justify-content: right;
   }
   
   .slider:before {
@@ -182,90 +251,6 @@ ul {
     transform: translateX(-150%);
   }
   
-
-/* ---- SANDUWICH DE CLICAR ---------------------- ---- */
-
-.burger {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    background: transparent;
-    cursor: pointer;
-    display: block;
-  }
-  
-  .burger input {
-    display: none;
-  }
-  
-  .burger span {
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background: black;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-  }
-  
-  .burger span:nth-of-type(1) {
-    top: 0px;
-    transform-origin: left center;
-  }
-  
-  .burger span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-  }
-  
-  .burger span:nth-of-type(3) {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-  }
-  
-  .burger input:checked ~ span:nth-of-type(1) {
-    transform: rotate(45deg);
-    top: 0px;
-    left: 5px;
-  }
-  
-  .burger input:checked ~ span:nth-of-type(2) {
-    width: 0%;
-    opacity: 0;
-  }
-  
-  .burger input:checked ~ span:nth-of-type(3) {
-    transform: rotate(-45deg);
-    top: 28px;
-    left: 5px;
-  }
-
-/* -------- PARTE DOS DROPDOWN NO SANDUICHE ------------*/
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
 /*   -------------------- MAIN --------------------------------------------*/
 
 main {
@@ -315,36 +300,75 @@ h1 {
 /* -------------- CARDS -----------------*/
 
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .card {
-    width: 190px;
-    height: 254px;
-    border-radius: 30px;
-    padding: 20px;
-    background: lightgrey;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
-    }
-
-/* --------------------- FOOTER ---------------------------*/
-
-footer {
-    display: flex;
-    position: static;
-    margin-top: 40px;
-    bottom: 0px;
-    padding: 10px;
-    min-height: 100px;
-    max-height: 100px;
-    
+  width: 800px;
+  border-radius: 10px;
+  padding: 20px;
+  background: #e9ecef;
+  display: flex;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 20px;
 }
 
 
-.contact {
-    position: fixed;
-    right: 15px;
+h2{
+color: #77a6b6;
+}
+
+.card-img{
+  width: 50%;
+  object-fit: cover;
+  border-radius: 50%;
+  right:15px
+}
+
+.card-text{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: left;
+  padding-left: 20px;
+}
+.card-itens{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: left;
+  align-items: center;
+  justify-content: center;
+}
+/* --------------------- FOOTER ---------------------------*/
+
+footer {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-left, .footer-right {
+  width: 50%;
+  float: left;
+}
+
+.footer-center {
+  clear: both;
+  margin-top: 10px;
+}
+
+.footer-left p, .footer-right p, .footer-center p {
+  margin: 5px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer-left, .footer-right {
+      width: 100%;
+  }
 }
