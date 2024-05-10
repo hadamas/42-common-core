@@ -9,13 +9,13 @@ function changeColor() {
     document.body.style.backgroundColor = "#00111c";
     document.getElementById("titulo").style.color = "#ffffff";
     document.getElementById("subtitulo").style.color = "#ffffff";
-    document.getElementsById("card-style").style.backgroundColor = "#415a77"
 
     isColorChanged = true;
   } else {
-    document.body.style.backgroundColor = "#ffffff"; // Volta para a cor original
+    document.body.style.backgroundColor = "#ffffff"; 
     document.getElementById("titulo").style.color = "#000000";
     document.getElementById("subtitulo").style.color = "#000000";
+
     isColorChanged = false;
   }
 }

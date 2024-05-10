@@ -288,6 +288,7 @@ h1 {
     max-height: 150px;
     min-height: 50px;
     border-radius: 100px;
+    border: 2px white solid;
 }
 
 .about-me p {
