@@ -21,13 +21,13 @@
 # include <unistd.h>
 # include <fcntl.h>
 
-# define GRAM "./assets/gram.xpm"
-# define TREE "./assets/tree.xpm"
-# define KID_B "./assets/ash_back.xpm"
-# define KID_L "./assets/ash_left.xpm"
-# define KID_R "./assets/ash_right.xpm"
-# define KID_F "./assets/ash_front.xpm"
-# define POK "./assets/pokeball.xpm"
+# define GRAM "./assets/background.xpm"
+# define TREE "./assets/wall.xpm"
+# define KID_B "./assets/ship_down.xpm"
+# define KID_L "./assets/ship_left.xpm"
+# define KID_R "./assets/ship_right.xpm"
+# define KID_F "./assets/ship_up.xpm"
+# define POK "./assets/coin.xpm"
 # define EXIT "./assets/exit.xpm"
 
 # define A 97
