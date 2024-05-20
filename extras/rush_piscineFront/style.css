@@ -2,13 +2,16 @@
     box-sizing: border-box;
 }
 
+
 body {
     display: flexbox;
     justify-content: center;
     align-items: center;
     font-family: Helvetica, Sans-Serif;
-    overflow: auto;
+    overflow:scroll;
     margin: 0 auto;
+    max-width: 100%;
+    min-width: fit-content;
 }
 
 
@@ -182,8 +185,7 @@ a {
 
   /* ----------- LIGHT/ DARK MODE BUTTON ------------------*/
 
-  input {
-  }
+
 /* The switch - the box around the slider */
 .switch {
     font-size: 17px;
