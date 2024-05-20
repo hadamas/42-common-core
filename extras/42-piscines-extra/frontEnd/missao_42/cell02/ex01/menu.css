@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+nav {
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+}
+
+button {
+    margin: 0;
+    border: none;
+}
+
+button::after {
+    
+}
+
+span {
+    display: none;
+}
