@@ -29,15 +29,19 @@ For further information about 42's selection process (the "Piscine"), please vis
 
 ### Common Circle
 
-| RANK | PROJECT       | LANGUAGE              | TOPICS                                                                                               | EXPERIENCE | LAST COMMIT |
+| RANK | PROJECT       | LANGUAGE              | TOPICS                                                                                               |   LEVEL    | LAST COMMIT |
 |------|---------------|-----------------------|------------------------------------------------------------------------------------------------------|------------|-------------|
-| 00   | libft         | C                     | `Library` `Makefile`                                                                                 | 462 XP     | 2023-11-09  |
-| 01   | ft_printf     | C                     | `variadic arguments` `character parsing` `unicode encoding` `IEEE 754` `BigInt` `Library` `Makefile` | 882 XP     | 2023-11-28  |
-| 01   | get_next_line | C                     | `file descriptor`  `LinkedList`                                                                      | 882 XP     | 2023-12-16  |
-| 01   | born2beroot   | `VirtualBox` `Debian` | `Virtual Machine` `OS` `ShellScript` `SSH` `LVM`                                                     | 577 XP     | 2024-01-04  |
-| 02   | minitalk      | C                     | `PID` `UNIX signals`                                                                                 |            | 2024-02-    |
-| 02   | push_swap     | C                     | `algorithm` `stack` `sort`                                                                           |            | 2024-02-    |
-| 02   | so_long       | C                     | In progress                                                                                          |            | 2024-02-    |
+| 00   | libft         | C                     | `Library` `Makefile`                                                                                 | 1.00       | 2023-11-09  |
+| 01   | ft_printf     | C                     | `variadic arguments` `character parsing` `unicode encoding` `IEEE 754` `BigInt` `Library` `Makefile` | 1.39       | 2023-11-28  |
+| 01   | get_next_line | C                     | `file descriptor`  `LinkedList`                                                                      | 1.79       | 2023-12-16  |
+| 01   | born2beroot   | `VirtualBox` `Debian` | `Virtual Machine` `OS` `ShellScript` `SSH` `LVM`                                                     | 2.03       | 2024-01-04  |
+| 02   | minitalk      | C                     | `PID` `UNIX signals`                                                                                 | 2.42       | 2024-02-23  |
+| 02   | push_swap     | C                     | `algorithm` `stack` `sort`                                                                           | 2.95       | 2024-03-29  |
+| 02   | so_long       | C/C++                 | `algorithm` `struct` `mlx_library`                                                                   | 3.14       | 2024-05-15  |
+| 03   | Minishell     | C                     | `pipe` `process` `fork` `bash` `compiler `  (current project - In progress)                          |            | 2024-02-    |
+| 03   | Philosopher   | C                     | `algorithm` `struct` `mlx_library`                                                                   |            | 2024-02-    |
+| 04   | CPP Modules   | C++                   | `Inheritance` `Subtype polymorphism` `abstract classes`                                              |            | 2024-02-    |
+
 
 ### EXAMS
 
@@ -58,3 +62,29 @@ At 42 School, it is expected that almost every project is written following the 
 - You can't declare more than 5 variables per function;
 - ... 
 ```
+
+## 🛠️ Skills developed at 42cursus
+
+### Hard-skills
+
+	* C/C++ language, Makefile
+	* Shell scripting
+	* Git
+	* Networks
+	* Docker
+	* SQL
+	* Web (HTML, CSS, Wordpress)
+	* Computer graphics
+	* Assembly language
+
+-- among others (find below the complete [curriculum](#-42s-galaxy-curriculum)).
+
+## 🌌 42's galaxy (curriculum)
+
+**42cursus** comprises two groups of projects: the first one being known as _"inner circle"_ and the second one, _"outer treks"_ - due to the **Holy Graph** layout (see image below).
+
+The **inner circle** is the basic curriculum, with all projects being mandatory to attain level 7 - which is the minimum level required for activities such as internships and interchange.
+
+The **outer treks** is a collection of diverse project trails in subjects ranging from operational systems to web development which allows cadets to specialize on whatever subject they prefer.
+
+![42's galaxy](galaxy.png)
