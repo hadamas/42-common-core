@@ -38,9 +38,9 @@ For further information about 42's selection process (the "Piscine"), please vis
 | 02   | minitalk      | C                     | `PID` `UNIX signals`                                                                                 | 2.42       | 2024-02-23  |
 | 02   | push_swap     | C                     | `algorithm` `stack` `sort`                                                                           | 2.95       | 2024-03-29  |
 | 02   | so_long       | C/C++                 | `algorithm` `struct` `mlx_library`                                                                   | 3.14       | 2024-05-15  |
-| 03   | Minishell     | C                     | `pipe` `process` `fork` `bash` `compiler `  (current project - In progress)                          |            | 2024-02-    |
-| 03   | Philosopher   | C                     | `algorithm` `struct` `mlx_library`                                                                   |            | 2024-02-    |
-| 04   | CPP Modules   | C++                   | `Inheritance` `Subtype polymorphism` `abstract classes`                                              |            | 2024-02-    |
+| 03   | Minishell     | C                     | `pipe` `process` `fork` `bash` `compiler `  (current project - In progress)                          | -          | In progress |
+| 03   | Philosopher   | C                     | `algorithm` `struct` `mlx_library`                                                                   | -          | Not started |
+| 04   | CPP Modules   | C++                   | `Inheritance` `Subtype polymorphism` `abstract classes`                                              | -          | Not started |
 
 
 ### EXAMS
@@ -48,7 +48,7 @@ For further information about 42's selection process (the "Piscine"), please vis
 | RANK | LANGUAGE | FINISH DATE | GRADE |
 |------|----------|-------------|-------|
 | 02   | C        | 2024-01-30  | 100%  |
-| 03   | C        | In Progress |       |
+| 03   | C        | In Progress | -     |
 
 ### NORMINETTE
 
