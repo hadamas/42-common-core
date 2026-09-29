@@ -1,0 +1,30 @@
+* {
+    display: flexbox;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+table {
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: nowrap;
+    border-collapse: collapse;
+}
+th {
+    padding: 0px;
+}
+td {
+    border: 1px black solid;
+}
+.c1 {
+    padding: 0;
+    background-color: pink;
+}
+.c2 {
+    padding: 0;
+    background-color: salmon;
+    }
+/*http://127.0.0.1:3000/cell02/ex00/responsive.html*/

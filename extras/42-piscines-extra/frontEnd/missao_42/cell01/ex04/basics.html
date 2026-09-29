@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics</title>
+    <style type="text/css">
+        * {
+            display: flexbox;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: pink;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+        }
+        div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;  
+            align-items: center;
+        }
+        img, a {
+            padding: 10px;
+        }
+        .link {
+            border-bottom: 10px black solid;
+        }
+        span {
+            position: fixed;
+            font-style: italic;
+            right: 10px;
+            font-family: monospace;
+        }
+      </style>
+      
+</head>
+<body>
+    <h1>#BASICS</h1>
+        <div>
+             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAdVBMVEUAAAAODg4JCQn///8FBQX8/Pzn5+f39/fX19caGhrx8fGgoKAWFhbDw8NMTEwiIiLf399mZmbOzs5HR0enp6dBQUE6OjpcXFy9vb3IyMgyMjJhYWGVlZWEhITi4uJxcXEqKiotLS18fHxTU1OysrKFhYWPj49UGyetAAAECUlEQVR4nO3Z61LaQACG4cAaliwh4VARtSgi9v4vsbvZBAgiX23p0Mb3nf4IOxCTZzbHJj0SJdfegH8/iGQQySCSQSQ7TdT/on2C6Cb5mp00gugwiGQQySCSQSSDSAaRDCIZRDKIZBDJIJJBJINIBpEMIhlEMohkEMkgkkEkg0gGkQwiGUQyiGQQySCSQSSDSAaRDCIZRDKIZBDJIJJBJINIBpEMIhlEMohkEMkgkkEkg0gGkQwiGUQyiGQQySCSQSSDSAaRDCIZRDKIZBDJIJJBJINIBpEMIhlEMohkEMkgkl2b6Ha62tw97D9nWZbXi70sz+q/2cuzvCnrx7GwWH+z2P283P/8Yl2X6HVmjc8OH+uBfODcuF4eWefmcfG7X9x1Vw31Js7N6m+OV80KJ84OL72RVyW6cyZN/b/U2O9xJPdkzY5/83j1/BgZk5qmyNkfGNNoLO20XvKDT5feymsSLSZ+h1NbIWki/8VYnEUtIuNe45IfnFx6M69JtPVTY7AqF29PphY6Q2SmD4tYPNm0iUzq59FN94iGjUH23AydIbo92vA2kXG3XSTy+2PL9lDuD7vPE43DmeppkXSPKMyiH+2h35tF43BOM8Ose0SjcD2bFYdDmSca3mQhf6pqERX9+sYo3hcdE3mj2bpzROWsuubPVuvdUCBK6/sf2yZqbosGi7jh7QMt5OdRx4huksUw7Jjf++aCFonMvgOiJhvvxd8RBe571zWi5GEZSLzJshfHKqKmNlEz6k4SuXFj2zEi/wgymlRToJ5H1bloXoTmyzbR8zxWRM2jc5Er7ztI5JGqVT4/eSP7Uo1kH99d769o1a+OibKkOrN1jSgghcPNn5LMpvp8hmh+tOHtA83fYK0HHZxFSR4n0psJR1pY+hOipBiGY61bRK+zePRsd/eQv3SgxQ1/T5Ss/SHbLaLpILXb53mxDCeRKHDmSX/1OI3FZ5ZTRMncdmsWzdPqGhSvQ9s4duYBZNf7lyE7ouTOdoqoPxpUd3xht4frOPYhUfprRMnGdYkoSW63rtp1N36pR3Jn7X29PLLW7l7MHtS8mLW2wVz6x5LmlcG0Sy9mw/ryYrrZPB68EVmXZfMp88v138zLg3rxxqjcfzM83O7WUPQvvJ3X/h+Q/6Br3zr+hXVeOmaRDCIZRDKIZBDJIJJBJINIBpEMIhlEMohkEMkgkkEkg0gGkQwiGUQyiGQQySCSQSSDSAaRDCIZRDKIZBDJIJJBJINIBpEMIhlEMohkEMkgkkEkg0gGkQwiGUQyiGQQySCSQSSDSAaRDCIZRDKIZBDJIJJBJINIBpEMIhlEMohkEMkgkkEkg0gGkQwiGUSyTxD1v2gnMU4T0UEQySCSQSSDSAaR7CcCI1T41aZQmAAAAABJRU5ErkJggg==" alt="shein">
+             <img src="data:image/png;base64,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" alt="muggler">
+        </div>
+        <div class="link">
+            <a href="https://br.shein.com/">Shein Link</a>
+            <a href="https://www.farfetch.com/br/">Mugler Link</a>
+        </div>
+
+        <span>© ahadama- 2024</span>
+</body>
+</html>
